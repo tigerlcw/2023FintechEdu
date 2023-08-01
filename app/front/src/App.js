@@ -2,6 +2,7 @@ import './App.css';
 import Welcome from './Components/Welcome'; // 컴포넌트 import
 import StateComponent from './Components/StateComponent';
 import InputComponent from './Components/InputComponent';
+import ListComponent from './Components/ListComponent';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Welcome username="김누구" age={20} />
       <StateComponent /> */}
       <InputComponent /> {/* 컴포넌트 사용 */}
+      <ListComponent />
     </div>
   );
 }
