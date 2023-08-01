@@ -1,19 +1,21 @@
-import './App.css';
-import Welcome from './Components/Welcome'; // 컴포넌트 import
-import StateComponent from './Components/StateComponent';
-import InputComponent from './Components/InputComponent';
-import ListComponent from './Components/ListComponent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StyledComponent from './Components/StyledComponent';
+import InputComponent from './Components/InputComponent';
+import StateComponent from './Components/StateComponent';
+import Welcome from './Components/Welcome';
+import ListComponent from './Components/ListComponent';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Welcome username="이누구" age={14} /> 
-      <Welcome username="김누구" age={20} />
-      <StateComponent /> */}
-      <InputComponent /> {/* 컴포넌트 사용 */}
-      <StyledComponent />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome />}></Route>
+        <Route path="/style" element={<StyledComponent />}></Route>
+        <Route path="/input" element={<InputComponent />}></Route>
+        <Route path="/list" element={<ListComponent />}></Route>
+        <Route path="/state" element={<StateComponent />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
