@@ -6,6 +6,8 @@ import Welcome from './components/Welcome';
 import ListComponent from './components/ListComponent';
 import AxiosComponent from './components/AxiosComponent';
 import NewsPage from './pages/NewsPage';
+import AuthPage from './pages/AuthPage';
+import AuthResultPage from './pages/AuthResultPage';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/axios" element={<AxiosComponent />}></Route>
         <Route path="/list" element={<ListComponent />}></Route>
         <Route path="/style" element={<StyledComponent />}></Route> */}
+        <Route path="/" element={<AuthPage />}></Route>
+        <Route path="/authResult" element={<AuthResultPage />}></Route>
         <Route path="/news" element={<NewsPage />}></Route>
       </Routes>
     </BrowserRouter>
