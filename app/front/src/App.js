@@ -8,6 +8,7 @@ import AxiosComponent from './components/AxiosComponent';
 import NewsPage from './pages/NewsPage';
 import AuthPage from './pages/AuthPage';
 import AuthResultPage from './pages/AuthResultPage';
+import MainPage from './pages/MainPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/list" element={<ListComponent />}></Route>
         <Route path="/style" element={<StyledComponent />}></Route> */}
         <Route path="/" element={<AuthPage />}></Route>
+        <Route path="/main" element={<MainPage />}></Route>
         <Route path="/authResult" element={<AuthResultPage />}></Route>
         <Route path="/news" element={<NewsPage />}></Route>
       </Routes>

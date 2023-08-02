@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppHeader from '../components/common/AppHeader';
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
@@ -28,8 +28,11 @@ const AuthResultPage = () => {
         grant_type: 'authorization_code',
       },
     };
-    axios(requestOption).then((response) => {
-      console.log(response);
+    axios(requestOption).then(({ data }) => {
+      // localStorage에 저장 -> 실무에서는 로컬스토리지보다는 쿠키에 저장
+      const { access_token, user_seq_no } = data;
+      localStorage.setItem('accessToken', access_token);
+      localStorage.setItem('userSeqNo', user_seq_no);
     });
   };
 
@@ -38,6 +41,8 @@ const AuthResultPage = () => {
       <AppHeader title={'인증결과 / 토큰 생성'}></AppHeader>
       <p>코드 : {authCode}</p>
       <button onClick={handleClick}>accessToken 요청</button>
+      <p>accessToken : {data.access_token}</p>
+      <p>userSeqNo : {user_seq_no}</p>
     </div>
   );
 };
