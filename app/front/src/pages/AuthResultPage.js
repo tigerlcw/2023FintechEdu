@@ -15,7 +15,7 @@ const AuthResultPage = () => {
     //axios 요청 만들기
     let requestOption = {
       //메뉴얼보고작성
-      url: '토큰요청',
+      url: '/oauth/2.0/token',
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
