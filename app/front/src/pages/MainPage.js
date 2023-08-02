@@ -6,7 +6,6 @@ import axios from 'axios';
 const MainPage = () => {
   let accessToken = '';
   let userSeqNo = '';
-  let userName = '';
   let [accountList, setAccountList] = useState([]);
 
   useEffect(() => {
@@ -15,7 +14,6 @@ const MainPage = () => {
     console.log(localStorage.getItem('userName'));
     accessToken = localStorage.getItem('accessToken');
     userSeqNo = localStorage.getItem('userSeqNo');
-    userName = localStorage.getItem('account_holder_name');
     getAccountList();
   }, []);
 
@@ -42,14 +40,14 @@ const MainPage = () => {
 
   return (
     <div>
-      <AppHeader title={(userName, '의 전체 계좌목록')} />
-      <AppHeader title={userName} />
+      <AppHeader title={'전체 계좌목록'} />
       {accountList.map((account) => {
         return (
           <>
             <MainAccountCard
               bankName={account.bank_name}
               fintechUseNo={account.fintech_use_num}
+              accountName={account.account_holder_name}
             ></MainAccountCard>
           </>
         );

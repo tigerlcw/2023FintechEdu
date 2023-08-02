@@ -23,6 +23,12 @@ const FintechUseNo = styled.div`
   margin-bottom: 20px;
 `;
 
+const AccountName = styled.div`
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+`;
+
 const QrButton = styled.button`
   width: 120px;
   height: 40px;
@@ -62,7 +68,7 @@ const ButtonBlock = styled.div`
   margin-top: 20px;
 `;
 
-const MainAccountCard = ({ bankName, fintechUseNo }) => {
+const MainAccountCard = ({ bankName, fintechUseNo, accountName }) => {
   const handleQrButton = () => {
     console.log('QR 버튼 클릭');
     window.location.href = `/qrcode?fintechUseNo=${fintechUseNo}`;
@@ -77,6 +83,7 @@ const MainAccountCard = ({ bankName, fintechUseNo }) => {
     <CardBlock>
       <CardTitle>{bankName}</CardTitle>
       <FintechUseNo>{fintechUseNo}</FintechUseNo>
+      <AccountName>{accountName}</AccountName>
       <ButtonBlock>
         <QrButton onClick={handleQrButton}>QR 코드</QrButton>
         <BalanceButton onClick={handleBalanceButton}>잔액 조회</BalanceButton>
