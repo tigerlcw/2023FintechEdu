@@ -28,7 +28,9 @@ const AuthResultPage = () => {
         grant_type: 'authorization_code',
       },
     };
-    axios(requestOption).then(() => {});
+    axios(requestOption).then((response) => {
+      console.log(response);
+    });
   };
 
   return (
