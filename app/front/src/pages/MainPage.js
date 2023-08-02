@@ -11,7 +11,6 @@ const MainPage = () => {
   useEffect(() => {
     console.log(localStorage.getItem('accessToken'));
     console.log(localStorage.getItem('userSeqNo'));
-    console.log(localStorage.getItem('userName'));
     accessToken = localStorage.getItem('accessToken');
     userSeqNo = localStorage.getItem('userSeqNo');
     getAccountList();
