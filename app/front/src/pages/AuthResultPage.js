@@ -35,11 +35,11 @@ const AuthResultPage = () => {
       // localStorage에 저장 -> 실무에서는 로컬스토리지보다는 쿠키에 저장
       setAccessToken(data.access_token);
       setUserSeqNo(data.user_seq_no);
-      setUserName(data.account_holder_name);
+      setUserName(data.user_name);
       if (data.rsp_code !== 'O0001') {
         localStorage.setItem('accessToken', data.access_token);
         localStorage.setItem('userSeqNo', data.user_seq_no);
-        localStorage.setItem('userName', data.account_holder_name);
+        localStorage.setItem('userName', data.user_name);
         alert('저장 완료');
       } else {
         alert('인증에 실패했습니다 다시 시도해 주세요');

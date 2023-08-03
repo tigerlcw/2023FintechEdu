@@ -46,7 +46,7 @@ const MainPage = () => {
             <MainAccountCard
               bankName={account.bank_name}
               fintechUseNo={account.fintech_use_num}
-              accountName={account.account_holder_name}
+              accountName={account.user_name}
             ></MainAccountCard>
           </>
         );
