@@ -92,7 +92,8 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
      * 2legged token 사용 !
      * 입금을 하는 계좌를 잘 선택해 주세요
      */
-    const twoLeggedToken = process.env.REACT_APP_TWO_LEGGED_TOKEN;
+    const twoLeggedToken = process.env.REACT_APP_2LEGGED_TOKEN;
+    //2legged Token 입력바랍니다.
 
     const data = {
       cntr_account_type: 'N',
@@ -100,19 +101,18 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
       wd_pass_phrase: 'NONE',
       wd_print_content: '환불금액',
       name_check_option: 'off',
-      tran_dtime: '20230820130000',
+      tran_dtime: '20220812130000',
       req_cnt: '1',
       req_list: [
         {
           tran_no: '1',
           bank_tran_id: genTransId(),
-          fintech_use_num: fintechUseNo,
-          print_content: '쇼핑몰환불',
+          fintech_use_num: tofintechno,
+          print_content: '오픈서비스캐시백',
           tran_amt: amount,
-          req_client_name: '홍길동',
-          req_client_bank_code: '097',
-          req_client_account_num: '100000000001',
-          req_client_num: 'HONGGILDONG1234',
+          req_client_name: '유관우',
+          req_client_fintech_use_num: fintechUseNo,
+          req_client_num: '1234',
           transfer_purpose: 'ST',
         },
       ],
