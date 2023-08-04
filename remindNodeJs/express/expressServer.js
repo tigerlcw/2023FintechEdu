@@ -25,8 +25,6 @@ app.post('/user', function (req, res) {
 app.post('/login', function (req, res) {
   console.log(req.body.id);
   console.log(req.body.password);
-  res.send(req.body.id + '님 로그인 되었습니다.');
-  res.send('비밀번호는 ' + req.body.password);
 });
 
 app.listen(4000);
