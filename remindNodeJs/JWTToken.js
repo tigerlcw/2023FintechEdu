@@ -17,3 +17,14 @@ jwt.sign(
     res.json(token);
   }
 );
+
+const token =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJFbWFpbCI6InRlc3RhZG1pbjEyMyIsImlhdCI6MTY5MTExNzI0NSwiZXhwIjoxNjkxOTgxMjQ1LCJpc3MiOiJmaW50ZWNoLmFkbWluIiwic3ViIjoidXNlci5sb2dpbi5pbmZvIn0.OpYKUjNrbiDKOz92JQj2btQQ9UMOrZ0bDBDWR34RqF8';
+jwt.verify(token, tokenKey, (err, decoded) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('검증 완료: ', decoded);
+    console.log('-------------------------------------------------------');
+  }
+});
