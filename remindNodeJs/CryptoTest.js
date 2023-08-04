@@ -36,7 +36,5 @@ const AESDecrypt = (encrypted) => {
   console.log(decrypted);
 };
 
-AESEncrypt('');
-
-const encryptedData = 'BHH3zWvc/D+AuxB1jGOZ8doMqLEcNk1KKUjYLZnZeHU=';
-AESDecrypt(encryptedData);
+AESEncrypt('BHH3zWvc/D+AuxB1jGOZ8doMqLEcNk1KKUjYLZnZeHU=');
+AESDecrypt('BHH3zWvc/D+AuxB1jGOZ8doMqLEcNk1KKUjYLZnZeHU=');
