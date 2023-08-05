@@ -6,6 +6,7 @@ import axios from 'axios';
 const MainPage = () => {
   let accessToken = '';
   let userSeqNo = '';
+  let ourtoken = '';
   let [accountList, setAccountList] = useState([]);
 
   useEffect(() => {
@@ -13,6 +14,7 @@ const MainPage = () => {
     console.log(localStorage.getItem('userSeqNo'));
     accessToken = localStorage.getItem('accessToken');
     userSeqNo = localStorage.getItem('userSeqNo');
+    ourtoken = localStorage.getItem('ourtoken');
     getAccountList();
   }, []);
 
@@ -23,12 +25,12 @@ const MainPage = () => {
 
     const option = {
       method: 'GET',
-      url: '/v2.0/user/me',
+      url: '/account',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         Authorization: `Bearer ${accessToken}`,
+        ourtoken: ourtoken,
       },
-      params: getApiData,
     };
 
     axios(option).then(({ data }) => {
